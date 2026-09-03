@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@300..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Geist Pixel';
+  src: url('https://cdn.jsdelivr.net/gh/vercel/geist-pixel-font@main/fonts/webfonts/GeistPixel-Square.woff2') format('woff2');
+  font-display: swap;
+}
+
+:root {
+  --bg: 255 255 255;
+  --ink: 10 10 10;
+  --g50: 250 250 250;
+  --g100: 245 245 245;
+  --g200: 233 233 233;
+  --g300: 212 212 212;
+  --g400: 163 163 163;
+  --g500: 115 115 115;
+  --g600: 82 82 82;
+  --g700: 64 64 64;
+  --g800: 38 38 38;
+  --g900: 23 23 23;
+  --g950: 10 10 10;
+  --halftone: rgba(10, 10, 10, 0.85);
+  --sel-bg: #0a0a0a;
+  --sel-fg: #ffffff;
+  --font-geist: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-geist-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-geist-pixel: 'Geist Pixel', 'Geist Mono', monospace;
+  color-scheme: light;
+}
+
+html.dark {
+  --bg: 10 10 10;
+  --ink: 250 250 250;
+  --g50: 18 18 18;
+  --g100: 24 24 24;
+  --g200: 36 36 36;
+  --g300: 52 52 52;
+  --g400: 115 115 115;
+  --g500: 140 140 140;
+  --g600: 163 163 163;
+  --g700: 190 190 190;
+  --g800: 212 212 212;
+  --g900: 235 235 235;
+  --g950: 250 250 250;
+  --halftone: rgba(250, 250, 250, 0.20);
+  --sel-bg: #fafafa;
+  --sel-fg: #0a0a0a;
+  color-scheme: dark;
+}
+
+html {
+  background-color: rgb(var(--bg));
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(var(--bg));
+  color: rgb(var(--ink));
+  font-family: var(--font-geist);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--sel-bg);
+  color: var(--sel-fg);
+}
+
+/* Coordinated color crossfade during a theme switch */
+html.theme-anim,
+html.theme-anim *,
+html.theme-anim *::before,
+html.theme-anim *::after {
+  transition: background-color 0.45s ease, border-color 0.45s ease, color 0.45s ease,
+    fill 0.45s ease, stroke 0.45s ease, box-shadow 0.45s ease !important;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* Halftone Dot Patterns */
+.halftone {
+  background-image: radial-gradient(circle at center, var(--halftone) 1px, transparent 1.6px);
+  background-size: 9px 9px;
+}
+.halftone-dense {
+  background-image: radial-gradient(circle at center, var(--halftone) 0.8px, transparent 1.3px);
+  background-size: 6px 6px;
+}
+.halftone-wide {
+  background-image: radial-gradient(circle at center, var(--halftone) 1.2px, transparent 2px);
+  background-size: 13px 13px;
+}
+
+/* Mask Gradients for Halftone Backgrounds */
+.mask-tr {
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 100% 0%, #000 0%, transparent 70%);
+  mask-image: radial-gradient(ellipse 80% 80% at 100% 0%, #000 0%, transparent 70%);
+}
+.mask-bl {
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 0% 100%, #000 0%, transparent 70%);
+  mask-image: radial-gradient(ellipse 80% 80% at 0% 100%, #000 0%, transparent 70%);
+}
+.mask-circle {
+  -webkit-mask-image: radial-gradient(circle at center, #000 35%, transparent 70%);
+  mask-image: radial-gradient(circle at center, #000 35%, transparent 70%);
+}
+.mask-fade-y {
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 15%, #000 85%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, #000 15%, #000 85%, transparent);
+}
+
+/* Pulse animation */
+@keyframes blink {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.92); }
+}
+.pulse-dot {
+  animation: blink 2s ease-in-out infinite;
+}
+
+/* 3D Spotlight Card Deck */
+.deck {
+  position: relative;
+  height: 20.5rem;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-x: clip;
+  overflow-y: visible;
+}
+@media (min-width: 640px) {
+  .deck {
+    height: 18.5rem;
+  }
+}
+
+.deck-card {
+  position: absolute;
+  top: 0.75rem;
+  left: 50%;
+  width: 18.5rem;
+  margin-left: -9.25rem;
+  transform-origin: center bottom;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+  will-change: transform;
+}
+@media (min-width: 640px) {
+  .deck-card {
+    width: 22rem;
+    margin-left: -11rem;
+  }
+}
+
+.deck-card.is-center {
+  transform: translateY(0) rotate(0deg) scale(1);
+  z-index: 30;
+  box-shadow: 0 24px 50px -20px rgba(0, 0, 0, 0.4);
+}
+.deck-card.is-left {
+  transform: translateX(-42%) translateY(14px) rotate(-14deg) scale(0.88);
+  z-index: 10;
+  box-shadow: 0 16px 32px -16px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+.deck-card.is-right {
+  transform: translateX(42%) translateY(14px) rotate(14deg) scale(0.88);
+  z-index: 20;
+  box-shadow: 0 16px 32px -16px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.deck-card.is-left::after,
+.deck-card.is-right::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: rgb(var(--bg) / 0.45);
+  transition: background 0.3s ease;
+  pointer-events: none;
+}
+.deck-card.is-left:hover::after,
+.deck-card.is-right:hover::after {
+  background: rgb(var(--bg) / 0.1);
+}
+
+.deck-card.is-center:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 32px 60px -20px rgba(0, 0, 0, 0.5);
+}
+.deck-card.is-left:hover {
+  transform: translateX(-46%) translateY(4px) rotate(-10deg) scale(0.92);
+  z-index: 25;
+}
+.deck-card.is-right:hover {
+  transform: translateX(46%) translateY(4px) rotate(10deg) scale(0.92);
+  z-index: 25;
+}
+
+.deck-card:not(.is-center) a {
+  pointer-events: none;
+}
+
+/* Custom modern scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--g300));
+  border-radius: 9999px;
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background: rgb(var(--g200));
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--g400));
+}
+
+/* Keycaps */
+kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-geist-mono);
+  font-size: 0.75rem;
+  line-height: 1;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  background-color: rgb(var(--g100));
+  border: 1px solid rgb(var(--g300));
+  color: rgb(var(--g600));
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+html.dark kbd {
+  background-color: rgb(var(--g100));
+  border-color: rgb(var(--g200));
+  color: rgb(var(--g400));
+}
+
