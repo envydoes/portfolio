@@ -66,11 +66,8 @@ export const MobileNav: React.FC<MobileNavProps> = ({
         <Link
           href="/"
           onClick={() => playSound('click')}
-          className="flex items-center gap-2 font-mono text-sm font-bold text-ink dark:text-white"
+          className="flex items-center font-mono text-sm font-bold text-ink dark:text-white"
         >
-          <div className="flex h-6 w-6 items-center justify-center rounded-md bg-ink text-white dark:bg-white dark:text-ink font-mono text-xs font-black">
-            JM
-          </div>
           <span>{personalInfo.shortName}</span>
         </Link>
 
@@ -98,10 +95,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({
       {isOpen && (
         <div className="fixed inset-0 z-50 flex flex-col bg-white dark:bg-[#0a0a0a] px-6 py-6 lg:hidden animate-fade-up">
           <div className="flex items-center justify-between border-b border-gray-200 dark:border-[#1e1e1e] pb-4">
-            <div className="flex items-center gap-2 font-mono text-sm font-bold text-ink dark:text-white">
-              <div className="flex h-6 w-6 items-center justify-center rounded-md bg-ink text-white dark:bg-white dark:text-ink font-mono text-xs font-black">
-                JM
-              </div>
+            <div className="flex items-center font-mono text-sm font-bold text-ink dark:text-white">
               <span>{personalInfo.name}</span>
             </div>
             <button

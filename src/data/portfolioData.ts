@@ -33,9 +33,8 @@ export const portfolioData: PortfolioData = {
 
   about: {
     paragraphs: [
-      "I am a BS Information Technology student at Nueva Ecija University of Science and Technology (NEUST), specializing in full-stack web development, scalable backend systems, and modern cloud infrastructure.",
-      "I build reliable, user-focused web applications by combining robust relational database design (MySQL, PostgreSQL), intuitive frontend engineering (React, Next.js, TypeScript, Tailwind CSS), and practical generative AI solutions. I value clear communication, thoughtful problem-solving, and delivering maintainable software that supports real business needs.",
-      "I'm passionate about writing clean, maintainable code, deploying reliable production systems, and working with modern tooling across the full software development lifecycle.",
+      "I'm a full-stack developer. I build modern web and mobile apps, and these days I'm focused on generative AI.",
+      "Right now I'm building cool new stuff every day. I love turning rough ideas into things people actually use.",
     ],
   },
 
@@ -459,11 +458,6 @@ export const portfolioData: PortfolioData = {
       name: 'Nueva Ecija University of Science and Technology',
       url: 'https://neust.edu.ph',
       role: 'BSIT Student',
-    },
-    {
-      name: 'Icore Developer Team',
-      url: 'https://github.com/envydoes',
-      role: 'Lead Systems Developer',
     },
     {
       name: 'GitHub Open Source Community',
