@@ -390,6 +390,17 @@ export const portfolioData: PortfolioData = {
       skills: ['Emerging Technology', 'IT Strategy', 'Hyperautomation', 'Digital Transformation'],
       description: 'Learning Advocate 2026 masterclass on emerging IT trends, disruptive technologies, hyperautomation, and digital transformation readiness.',
     },
+    {
+      id: 'codecred-web-performance',
+      title: 'Web Performance',
+      issuer: 'CodeCred',
+      date: 'Aug 23, 2026',
+      credentialUrl: 'https://www.codecred.dev/embed/certificates/9998cb4e-8640-4cff-8696-94494f17b4fe',
+      credentialId: '9998cb4e-8640-4cff-8696-94494f17b4fe',
+      logoUrl: 'https://www.codecred.dev/favicon.ico',
+      skills: ['Web Performance', 'Core Web Vitals', 'Optimization', 'Best Practices'],
+      description: 'Advanced CodeCred certification demonstrating knowledge of web performance assessment, optimization techniques, Core Web Vitals, and high-performing web implementation practices.',
+    },
   ],
 
   currently: [
