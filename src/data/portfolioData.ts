@@ -275,15 +275,14 @@ export const portfolioData: PortfolioData = {
 
   certifications: [
     {
-      id: 'codecred-web-performance',
-      title: 'Web Performance',
-      issuer: 'CodeCred',
-      date: 'Aug 23, 2026',
-      credentialUrl: 'https://www.codecred.dev/embed/certificates/9998cb4e-8640-4cff-8696-94494f17b4fe',
-      credentialId: '9998cb4e-8640-4cff-8696-94494f17b4fe',
-      logoUrl: 'https://www.codecred.dev/favicon.ico',
-      skills: ['Web Performance', 'Core Web Vitals', 'Optimization', 'Best Practices'],
-      description: 'Advanced CodeCred certification demonstrating knowledge of web performance assessment, optimization techniques, Core Web Vitals, and high-performing web implementation practices.',
+      id: 'javascript-essentials-2',
+      title: 'JavaScript Essentials 2',
+      issuer: 'DICT-ITU DTC Initiative',
+      date: 'Sep 5, 2026',
+      credentialUrl: 'https://www.netacad.com/certificates/?issuanceId=36401653-fcfe-4298-b5ba-acee36859624',
+      credentialId: '36401653-fcfe-4298-b5ba-acee36859624',
+      skills: ['JavaScript', 'Programming Fundamentals', 'Cisco Networking Academy'],
+      description: 'Completed JavaScript Essentials 2 through the Cisco Networking Academy program offered by the DICT-ITU DTC Initiative.',
     },
     {
       id: 'google-analytics-cert',
