@@ -26,7 +26,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAskAI, playSound }) => {
       <div className="flex flex-col sm:flex-row items-start gap-6">
         {/* Avatar */}
         <div className="relative group shrink-0">
-          <div className="relative h-20 w-20 sm:h-24 sm:w-24 overflow-hidden rounded-2xl border-2 border-gray-200 dark:border-[#2a2a2a] bg-gray-100 dark:bg-[#1a1a1a] shadow-sm transition-transform duration-300 group-hover:scale-105">
+          <div className="relative h-48 w-48 sm:h-64 sm:w-64 overflow-hidden rounded-2xl border-2 border-gray-200 dark:border-[#2a2a2a] bg-gray-100 dark:bg-[#1a1a1a] shadow-sm transition-transform duration-300 group-hover:scale-105">
             <img
               src={personalInfo.avatarUrl}
               alt={personalInfo.name}
