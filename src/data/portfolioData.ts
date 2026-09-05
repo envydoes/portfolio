@@ -279,7 +279,7 @@ export const portfolioData: PortfolioData = {
       title: 'Web Performance',
       issuer: 'CodeCred',
       date: 'Aug 23, 2026',
-      credentialUrl: 'https://www.codecred.dev/certifications/9998cb4e-8640-4cff-8696-94494f17b4fe/view',
+      credentialUrl: 'https://www.codecred.dev/embed/certificates/9998cb4e-8640-4cff-8696-94494f17b4fe',
       credentialId: '9998cb4e-8640-4cff-8696-94494f17b4fe',
       logoUrl: 'https://www.codecred.dev/favicon.ico',
       skills: ['Web Performance', 'Core Web Vitals', 'Optimization', 'Best Practices'],

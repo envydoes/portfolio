@@ -27,11 +27,7 @@ export const Certifications: React.FC<CertificationsProps> = ({ playSound }) => 
 
   const handleCertClick = (cert: Certification) => {
     playSound('pop');
-    if (cert.credentialUrl) {
-      window.open(cert.credentialUrl, '_blank', 'noopener,noreferrer');
-    } else {
-      setSelectedCert(cert);
-    }
+    setSelectedCert(cert);
   };
 
   return (
@@ -64,7 +60,16 @@ export const Certifications: React.FC<CertificationsProps> = ({ playSound }) => 
           <div
             key={cert.id}
             onClick={() => handleCertClick(cert)}
+            onKeyDown={(event) => {
+              if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                handleCertClick(cert);
+              }
+            }}
             onMouseEnter={() => playSound('hover')}
+            role="button"
+            tabIndex={0}
+            aria-label={`Preview ${cert.title} certificate`}
             className="group relative flex flex-col items-center rounded-xl bg-gradient-to-b from-gray-50 to-white dark:from-[#141414] dark:to-[#0f0f0f] px-4 py-5 text-center shadow-[0_8px_22px_-14px_rgba(10,10,10,0.15)] dark:shadow-[0_8px_22px_-14px_rgba(0,0,0,0.5)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_18px_36px_-20px_rgba(10,10,10,0.3)] dark:hover:shadow-[0_18px_36px_-20px_rgba(0,0,0,0.7)] border border-gray-200/80 dark:border-[#222] cursor-pointer"
           >
             {/* Inner border inset like Bryl Lim */}
@@ -199,6 +204,36 @@ export const Certifications: React.FC<CertificationsProps> = ({ playSound }) => 
                 </p>
               </div>
             </div>
+
+            <div className="mt-5 overflow-hidden rounded-xl border border-gray-200 dark:border-[#262626] bg-gray-50 dark:bg-[#161616]">
+              {selectedCert.certificateImageUrl ? (
+                <img
+                  src={selectedCert.certificateImageUrl}
+                  alt={`${selectedCert.issuer} ${selectedCert.title} certificate`}
+                  className="max-h-[28rem] w-full object-contain"
+                />
+              ) : (
+                <div className="flex min-h-48 items-center justify-center px-6 text-center text-xs font-mono text-gray-500 dark:text-[#888]">
+                  Certificate image preview unavailable. Use the verification link below.
+                </div>
+              )}
+            </div>
+
+            {selectedCert.credentialUrl ? (
+              <div className="mt-5 flex items-center justify-between gap-3 rounded-xl border border-gray-200 dark:border-[#262626] bg-gray-50 dark:bg-[#161616] p-4">
+                <p className="text-xs text-gray-600 dark:text-[#888]">
+                  Verification is hosted on {selectedCert.issuer}.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => window.open(selectedCert.credentialUrl, '_blank', 'noopener,noreferrer')}
+                  className="inline-flex shrink-0 items-center gap-1.5 rounded-lg border border-gray-200 dark:border-[#2a2a2a] px-3 py-2 text-xs font-mono text-gray-600 dark:text-[#aaa] hover:bg-white dark:hover:bg-[#1d1d1d] transition-colors"
+                >
+                  <ExternalLink className="h-3.5 w-3.5" />
+                  Open verification
+                </button>
+              </div>
+            ) : null}
 
             {/* Certificate Meta Details */}
             <div className="mt-5 space-y-3 rounded-xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/70 dark:bg-[#161616] p-4 text-xs font-mono">

@@ -84,6 +84,7 @@ export interface Certification {
   date?: string;
   credentialUrl?: string;
   credentialId?: string;
+  certificateImageUrl?: string;
   logoType?: 'google' | 'upskilltech' | 'coursera';
   logoUrl?: string;
   skills?: string[];
