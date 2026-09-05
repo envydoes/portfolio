@@ -60,11 +60,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
           href="/"
           onClick={() => playSound('click')}
           onMouseEnter={() => playSound('hover')}
-          className="group inline-flex items-center gap-2 font-mono text-[14px] font-bold tracking-tight text-ink dark:text-white transition-opacity hover:opacity-75"
+          className="group inline-flex items-center font-mono text-[14px] font-bold tracking-tight text-ink dark:text-white transition-opacity hover:opacity-75"
         >
-          <div className="flex h-6 w-6 items-center justify-center rounded-md bg-ink text-white dark:bg-white dark:text-ink font-mono text-xs font-black shadow-xs">
-            JM
-          </div>
           <span>{personalInfo.name}</span>
         </Link>
         {/* Navigation Links */}
