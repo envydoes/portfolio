@@ -13,7 +13,7 @@ export const portfolioData: PortfolioData = {
     name: 'Joshua M. Madulid',
     shortName: 'Joshua',
     handle: 'envydoes',
-    role: 'Full-Stack Developer & BS Information Technology',
+    role: 'Frontend-focused developer crafting polished web experiences with a practical backend edge.',
     tagline: 'Builder of production-ready web platforms with Next.js, React, Laravel, PHP & cloud tooling.',
     location: 'Nueva Ecija, Philippines',
     avatarUrl: '/images/joshua.jpg',
