@@ -168,7 +168,7 @@ export const Certifications: React.FC<CertificationsProps> = ({ playSound }) => 
           onClick={() => setSelectedCert(null)}
         >
           <div
-            className="relative w-full max-w-md rounded-2xl border border-gray-200 dark:border-[#262626] bg-white dark:bg-[#111] p-6 shadow-2xl"
+            className="relative grid max-h-[90vh] w-full max-w-5xl gap-6 overflow-y-auto rounded-2xl border border-gray-200 dark:border-[#262626] bg-white dark:bg-[#111] p-5 shadow-2xl sm:p-6 md:grid-cols-[minmax(0,1.35fr)_minmax(280px,0.65fr)]"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close button */}
@@ -184,7 +184,7 @@ export const Certifications: React.FC<CertificationsProps> = ({ playSound }) => 
             </button>
 
             {/* Badge Icon & Header */}
-            <div className="flex items-start gap-4">
+            <div className="flex items-start gap-4 md:col-span-2">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-gray-200 dark:border-[#2a2a2a] bg-gray-50 dark:bg-[#181818]">
                 {selectedCert.logoUrl ? (
                   <img src={selectedCert.logoUrl} alt={`${selectedCert.issuer} logo`} className="h-9 w-9 object-contain" />
@@ -205,12 +205,12 @@ export const Certifications: React.FC<CertificationsProps> = ({ playSound }) => 
               </div>
             </div>
 
-            <div className="mt-5 overflow-hidden rounded-xl border border-gray-200 dark:border-[#262626] bg-gray-50 dark:bg-[#161616]">
+            <div className="overflow-hidden rounded-xl border border-gray-200 dark:border-[#262626] bg-gray-50 dark:bg-[#161616] md:row-span-3">
               {selectedCert.certificateImageUrl ? (
                 <img
                   src={selectedCert.certificateImageUrl}
                   alt={`${selectedCert.issuer} ${selectedCert.title} certificate`}
-                  className="max-h-[28rem] w-full object-contain"
+                  className="max-h-[34rem] w-full object-contain"
                 />
               ) : (
                 <div className="flex min-h-48 items-center justify-center px-6 text-center text-xs font-mono text-gray-500 dark:text-[#888]">
@@ -219,8 +219,9 @@ export const Certifications: React.FC<CertificationsProps> = ({ playSound }) => 
               )}
             </div>
 
-            {selectedCert.credentialUrl ? (
-              <div className="mt-5 flex items-center justify-between gap-3 rounded-xl border border-gray-200 dark:border-[#262626] bg-gray-50 dark:bg-[#161616] p-4">
+            <div className="space-y-5">
+              {selectedCert.credentialUrl ? (
+                <div className="flex items-center justify-between gap-3 rounded-xl border border-gray-200 dark:border-[#262626] bg-gray-50 dark:bg-[#161616] p-4">
                 <p className="text-xs text-gray-600 dark:text-[#888]">
                   Verification is hosted on {selectedCert.issuer}.
                 </p>
@@ -232,11 +233,11 @@ export const Certifications: React.FC<CertificationsProps> = ({ playSound }) => 
                   <ExternalLink className="h-3.5 w-3.5" />
                   Open verification
                 </button>
-              </div>
-            ) : null}
+                </div>
+              ) : null}
 
             {/* Certificate Meta Details */}
-            <div className="mt-5 space-y-3 rounded-xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/70 dark:bg-[#161616] p-4 text-xs font-mono">
+              <div className="space-y-3 rounded-xl border border-gray-100 dark:border-[#1e1e1e] bg-gray-50/70 dark:bg-[#161616] p-4 text-xs font-mono">
               <div className="flex items-center justify-between">
                 <span className="text-gray-500 dark:text-[#777]">Recipient:</span>
                 <span className="font-semibold text-ink dark:text-[#ddd]">Joshua Madulid</span>
@@ -272,17 +273,18 @@ export const Certifications: React.FC<CertificationsProps> = ({ playSound }) => 
                   </div>
                 </div>
               )}
-            </div>
+              </div>
 
             {/* Description / Summary */}
-            {selectedCert.description && (
-              <p className="mt-4 text-xs text-gray-600 dark:text-[#888] leading-relaxed">
-                {selectedCert.description}
-              </p>
-            )}
+              {selectedCert.description && (
+                <p className="text-xs leading-relaxed text-gray-600 dark:text-[#888]">
+                  {selectedCert.description}
+                </p>
+              )}
+            </div>
 
             {/* Modal Actions */}
-            <div className="mt-5 flex items-center justify-end gap-2">
+            <div className="flex items-center justify-end gap-2 md:col-span-2">
               <button
                 type="button"
                 onClick={() => setSelectedCert(null)}
