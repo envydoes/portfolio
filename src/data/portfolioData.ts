@@ -281,6 +281,7 @@ export const portfolioData: PortfolioData = {
       date: 'Sep 5, 2026',
       credentialUrl: 'https://www.netacad.com/certificates/?issuanceId=36401653-fcfe-4298-b5ba-acee36859624',
       credentialId: '36401653-fcfe-4298-b5ba-acee36859624',
+      certificateImageUrl: '/images/javascript-essentials-2-certificate.png',
       logoUrl: 'https://cdn.simpleicons.org/cisco/049FD9',
       skills: ['JavaScript', 'Programming Fundamentals', 'Cisco Networking Academy'],
       description: 'Completed JavaScript Essentials 2 through the Cisco Networking Academy program offered by the DICT-ITU DTC Initiative.',
