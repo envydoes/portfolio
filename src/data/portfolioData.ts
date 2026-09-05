@@ -13,7 +13,7 @@ export const portfolioData: PortfolioData = {
     name: 'Joshua M. Madulid',
     shortName: 'Joshua',
     handle: 'envydoes',
-    role: 'Frontend-focused developer crafting polished web experiences with a practical backend edge.',
+    role: '',
     tagline: 'Builder of production-ready web platforms with Next.js, React, Laravel, PHP & cloud tooling.',
     location: 'Nueva Ecija, Philippines',
     avatarUrl: '/images/joshua.jpg',
@@ -33,7 +33,7 @@ export const portfolioData: PortfolioData = {
 
   about: {
     paragraphs: [
-      "I'm a full-stack developer. I build modern web and mobile apps, and these days I'm focused on generative AI.",
+      'Frontend-focused developer crafting polished web experiences with a practical backend edge.',
       "Right now I'm building cool new stuff every day. I love turning rough ideas into things people actually use.",
     ],
   },
