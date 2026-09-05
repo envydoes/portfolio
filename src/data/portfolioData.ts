@@ -34,7 +34,7 @@ export const portfolioData: PortfolioData = {
   about: {
     paragraphs: [
       'Frontend-focused developer crafting polished web experiences with a practical backend edge.',
-      "Right now I'm building cool new stuff every day. I love turning rough ideas into things people actually use.",
+      "Lately, I'm putting more of my energy into generative AI, exploring how intelligent tools can turn ambitious ideas into useful products.",
     ],
   },
 
