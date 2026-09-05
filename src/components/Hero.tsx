@@ -35,15 +35,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAskAI, playSound }) => {
             />
             <div className="absolute inset-0 rounded-2xl border border-white/20 dark:border-white/5 pointer-events-none" />
           </div>
-          {/* Online badge */}
-          {personalInfo.status.available && (
-            <span
-              className="absolute -bottom-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full border-2 border-white dark:border-[#0a0a0a] bg-emerald-500 shadow-xs"
-              title={personalInfo.status.text}
-            >
-              <span className="h-1.5 w-1.5 rounded-full bg-white pulse-dot"></span>
-            </span>
-          )}
         </div>
 
         {/* Identity */}
