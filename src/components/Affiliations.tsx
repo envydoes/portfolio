@@ -68,18 +68,22 @@ export const Affiliations: React.FC<AffiliationsProps> = ({ playSound }) => {
           </h3>
           <div className="space-y-2">
             <a
-              href={personalInfo.socials.github}
+              href="https://github.com/envydoes?tab=overview&from=2026-09-01&to=2026-09-11"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => playSound('click')}
               onMouseEnter={() => playSound('hover')}
-              className="flex items-center justify-between rounded-lg border border-gray-100 dark:border-[#222] bg-gray-50/50 dark:bg-[#161616] px-3 py-2 text-xs sm:text-sm font-medium text-gray-700 dark:text-[#ccc] hover:border-gray-300 dark:hover:border-[#3a3a3a] hover:text-ink dark:hover:text-white transition-all"
+              className="flex items-center justify-between rounded-lg border border-gray-100 dark:border-[#222] bg-gray-50/50 dark:bg-[#161616] px-3 py-2 text-xs sm:text-sm font-medium text-gray-700 dark:text-[#ccc] hover:border-gray-300 dark:hover:border-[#3a3a3a] hover:text-ink dark:hover:text-white transition-all group"
             >
               <span className="flex items-center gap-2">
                 <Github className="h-4 w-4" />
                 <span>GitHub (@envydoes)</span>
               </span>
-              <ArrowUpRight className="h-3.5 w-3.5 opacity-50" />
+              <span className="flex items-center gap-1.5 font-mono text-[11px] text-emerald-600 dark:text-emerald-400">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span>166 contributions in 2026</span>
+                <ArrowUpRight className="h-3.5 w-3.5 opacity-50 group-hover:opacity-100 transition-opacity" />
+              </span>
             </a>
 
             <a

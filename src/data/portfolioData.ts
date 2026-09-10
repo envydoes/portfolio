@@ -13,8 +13,8 @@ export const portfolioData: PortfolioData = {
     name: 'Joshua M. Madulid',
     shortName: 'Joshua',
     handle: 'envydoes',
-    role: '',
-    tagline: 'Builder of production-ready web platforms with Next.js, React, Laravel, PHP & cloud tooling.',
+    role: 'Full-Stack Developer & Software Engineer',
+    tagline: 'Builder of production-ready web platforms with Next.js, React, PHP & modern cloud tooling.',
     location: 'Nueva Ecija, Philippines',
     avatarUrl: '/images/joshua.jpg',
     avatarHoverUrl: '/images/joshua.jpg',
@@ -48,23 +48,17 @@ export const portfolioData: PortfolioData = {
     { name: 'Tailwind CSS', category: 'Frontend' },
     { name: 'SCSS', category: 'Frontend' },
     { name: 'Styled Components', category: 'Frontend' },
-    { name: 'Vite', category: 'Frontend' },
     { name: 'Webpack', category: 'Frontend' },
     { name: 'ESLint', category: 'Frontend' },
     { name: 'Prettier', category: 'Frontend' },
 
     // Backend
     { name: 'Node.js', category: 'Backend' },
-    { name: 'Python', category: 'Backend' },
-    { name: 'Java', category: 'Backend' },
     { name: 'PHP', category: 'Backend' },
-    { name: 'Laravel', category: 'Backend' },
     { name: 'RESTful APIs', category: 'Backend' },
 
     // Databases
     { name: 'MySQL', category: 'Database' },
-    { name: 'PostgreSQL', category: 'Database' },
-    { name: 'MongoDB', category: 'Database' },
 
     // DevOps & Cloud
     { name: 'Docker', category: 'DevOps & Cloud' },
@@ -73,14 +67,8 @@ export const portfolioData: PortfolioData = {
     { name: 'GCP', category: 'DevOps & Cloud' },
     { name: 'Azure', category: 'DevOps & Cloud' },
     { name: 'GitHub Actions', category: 'DevOps & Cloud' },
-    { name: 'Jenkins', category: 'DevOps & Cloud' },
     { name: 'GitLab CI', category: 'DevOps & Cloud' },
-    { name: 'Terraform', category: 'DevOps & Cloud' },
     { name: 'AWS CloudFormation', category: 'DevOps & Cloud' },
-    { name: 'Kubernetes', category: 'DevOps & Cloud' },
-    { name: 'Prometheus', category: 'DevOps & Cloud' },
-    { name: 'Grafana', category: 'DevOps & Cloud' },
-    { name: 'Datadog', category: 'DevOps & Cloud' },
 
     // AI & Modern Engineering Tools
     { name: 'Claude Code', category: 'AI & Tools' },
@@ -91,8 +79,6 @@ export const portfolioData: PortfolioData = {
     { name: 'PyTorch', category: 'AI & Tools' },
 
     // Tools & Environments
-    { name: 'JetBrains IntelliJ', category: 'Tools & Others' },
-    { name: 'PyCharm', category: 'Tools & Others' },
     { name: 'VS Code', category: 'Tools & Others' },
     { name: 'Git', category: 'Tools & Others' },
   ],
@@ -102,7 +88,7 @@ export const portfolioData: PortfolioData = {
       id: 'sumeste-portal',
       title: 'SumEste Portal',
       description: 'Cross-platform resident tracking system built for the Sumacab Este community, helping organize resident information and support efficient local administration.',
-      tags: ['PHP', 'Laravel', 'MySQL', 'Tailwind CSS', 'Live System'],
+      tags: ['PHP', 'MySQL', 'Tailwind CSS', 'Live System'],
       category: 'Full-Stack',
       liveUrl: 'https://sum-este-portal.digital',
       githubUrl: 'https://github.com/envydoes/SumEste-Portal',
@@ -207,7 +193,7 @@ export const portfolioData: PortfolioData = {
       id: 'sumeste-portal',
       title: 'SumEste Portal',
       description: 'Cross-platform resident tracking system built for the Sumacab Este community, helping organize resident information and support efficient local administration.',
-      tags: ['PHP', 'Laravel', 'MySQL', 'Tailwind CSS'],
+      tags: ['PHP', 'MySQL', 'Tailwind CSS'],
       category: 'Full-Stack',
       liveUrl: 'https://sum-este-portal.digital',
       githubUrl: 'https://github.com/envydoes/SumEste-Portal',
@@ -434,7 +420,12 @@ export const portfolioData: PortfolioData = {
     {
       icon: 'Code2',
       label: 'Working On',
-      value: 'SumEste Portal (live capstone) & polishing full-stack systems with Laravel, React & Next.js',
+      value: 'SumEste Portal (live capstone) & polishing full-stack systems with React, Next.js & PHP',
+    },
+    {
+      icon: 'GitPullRequest',
+      label: 'GitHub Activity',
+      value: '166 contributions in 2026 across repositories (@envydoes)',
     },
     {
       icon: 'Award',
@@ -461,8 +452,8 @@ export const portfolioData: PortfolioData = {
     },
     {
       name: 'GitHub Open Source Community',
-      url: 'https://github.com/envydoes',
-      role: 'Contributor & Builder',
+      url: 'https://github.com/envydoes?tab=overview&from=2026-09-01&to=2026-09-11',
+      role: '166 contributions in 2026 • Active Builder',
     },
   ],
 
@@ -470,7 +461,7 @@ export const portfolioData: PortfolioData = {
     {
       keywords: ['who', 'about', 'joshua', 'profile', 'background'],
       question: 'Who is Joshua?',
-      answer: "Joshua M. Madulid (@envydoes) is a BS Information Technology student at Nueva Ecija University of Science and Technology (NEUST). He is a full-stack developer with proven experience delivering live production systems like the SumEste Portal (sum-este-portal.digital), specializing in Next.js, React, Laravel, PHP, MySQL, and Docker.",
+      answer: "Joshua M. Madulid (@envydoes) is a BS Information Technology student at Nueva Ecija University of Science and Technology (NEUST). He is a full-stack developer with proven experience delivering live production systems like the SumEste Portal (sum-este-portal.digital), specializing in Next.js, React, PHP, MySQL, and Docker.",
     },
     {
       keywords: ['hire', 'available', 'job', 'work', 'collaborate'],
@@ -480,7 +471,7 @@ export const portfolioData: PortfolioData = {
     {
       keywords: ['skills', 'stack', 'technologies', 'tools', 'languages'],
       question: 'What technologies and programming languages does Joshua know?',
-      answer: "Joshua specializes in Frontend (React, Next.js, TypeScript, JavaScript, Tailwind CSS), Backend (Node.js, PHP, Laravel, Python, Java, RESTful APIs), Databases (MySQL, PostgreSQL, MongoDB), DevOps/Cloud (Docker, Coolify, AWS, GitHub Actions), and modern AI engineering tools (Claude Code, OpenAI, PyTorch).",
+      answer: "Joshua specializes in Frontend (React, Next.js, TypeScript, JavaScript, Tailwind CSS), Backend (Node.js, PHP, RESTful APIs), Databases (MySQL), DevOps/Cloud (Docker, Coolify, AWS, GitHub Actions), and modern AI engineering tools (Claude Code, OpenAI, PyTorch).",
     },
     {
       keywords: ['projects', 'work', 'portfolio', 'sumeste', 'capstone'],
@@ -491,6 +482,11 @@ export const portfolioData: PortfolioData = {
       keywords: ['certifications', 'credentials', 'google', 'coursera', 'certs'],
       question: 'What certifications does Joshua hold?',
       answer: "Joshua earned the Google AI Professional Certificate (8 Courses) on Coursera (verify: https://coursera.org/verify/professional-cert/H9QRZNAA0N74) and multiple professional webinar credentials from UpskillTechPH covering Enterprise Architecture, System Integration & APIs, Cyber Awareness, and Tech Interview Tactics.",
+    },
+    {
+      keywords: ['github', 'contributions', 'activity', 'commits', 'envydoes'],
+      question: 'How active is Joshua on GitHub?',
+      answer: "Joshua has recorded 166 contributions in 2026 on his GitHub (@envydoes), actively building and maintaining open-source repositories and live production platforms like the SumEste Portal.",
     },
     {
       keywords: ['contact', 'email', 'reach', 'message'],

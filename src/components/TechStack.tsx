@@ -19,18 +19,18 @@ export const TechStack: React.FC<TechStackProps> = ({ playSound }) => {
     'React',
     'Next.js',
     'Node.js',
-    'Python',
-    'Laravel',
-    'PostgreSQL',
+    'PHP',
+    'MySQL',
+    'Tailwind CSS',
   ];
 
   const secondaryRow = [
-    'AWS',
     'Docker',
     'Coolify',
-    'Kubernetes',
-    'PyTorch',
+    'AWS',
+    'GitHub Actions',
     'Claude Code',
+    'Git',
   ];
 
   const categoryMeta: Record<string, { label: string; icon: React.ElementType }> = {

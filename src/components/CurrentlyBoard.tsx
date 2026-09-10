@@ -11,6 +11,7 @@ import {
   MapPin,
   Sparkles,
   Award,
+  GitPullRequest,
 } from 'lucide-react';
 import { portfolioData } from '@/data/portfolioData';
 
@@ -31,6 +32,8 @@ export const CurrentlyBoard: React.FC<CurrentlyBoardProps> = ({ playSound }) => 
         return Target;
       case 'Award':
         return Award;
+      case 'GitPullRequest':
+        return GitPullRequest;
       case 'Music':
         return Music;
       case 'Coffee':
