@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Github } from 'lucide-react';
 import githubWeeksData from '@/data/githubWeeks2026.json';
 
 interface DayData {
@@ -43,7 +43,8 @@ export const GithubContributions: React.FC<GithubContributionsProps> = ({ playSo
     <section id="github" className="py-10 border-t border-gray-200/80 dark:border-[#1e1e1e]">
       {/* ── Section Header matching Bryl Lim design ── */}
       <div className="mb-5 flex items-baseline justify-between">
-        <h3 className="font-mono text-[11px] lowercase tracking-wider text-gray-400 dark:text-[#666] font-semibold">
+        <h3 className="flex items-center gap-1.5 font-mono text-[11px] lowercase tracking-wider text-gray-400 dark:text-[#666] font-semibold">
+          <Github className="h-3.5 w-3.5" />
           github
         </h3>
         <a
