@@ -13,7 +13,7 @@ export const portfolioData: PortfolioData = {
     name: 'Joshua M. Madulid',
     shortName: 'Joshua',
     handle: 'envydoes',
-    role: 'Full-Stack Developer & Software Engineer',
+    role: '',
     tagline: 'Builder of production-ready web platforms with Next.js, React, PHP & modern cloud tooling.',
     location: 'Nueva Ecija, Philippines',
     avatarUrl: '/images/joshua.jpg',
@@ -421,11 +421,6 @@ export const portfolioData: PortfolioData = {
       icon: 'Code2',
       label: 'Working On',
       value: 'SumEste Portal (live capstone) & polishing full-stack systems with React, Next.js & PHP',
-    },
-    {
-      icon: 'GitPullRequest',
-      label: 'GitHub Activity',
-      value: '166 contributions in 2026 across repositories (@envydoes)',
     },
     {
       icon: 'Award',

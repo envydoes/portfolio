@@ -4,13 +4,12 @@ import { portfolioData } from '@/data/portfolioData';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://madulidjosh.vercel.app'),
-  title: `${portfolioData.personalInfo.name} — Full-Stack Developer & Software Engineer`,
+  title: `${portfolioData.personalInfo.name} — Portfolio`,
   description: portfolioData.personalInfo.tagline,
   keywords: [
     'Joshua M. Madulid',
     'Joshua Madulid',
     'envydoes',
-    'Full-Stack Developer',
     'React',
     'Next.js',
     'PHP',

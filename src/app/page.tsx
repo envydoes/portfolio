@@ -11,6 +11,7 @@ import { Timeline } from '@/components/Timeline';
 import { Certifications } from '@/components/Certifications';
 import { CurrentlyBoard } from '@/components/CurrentlyBoard';
 import { Affiliations } from '@/components/Affiliations';
+import { GithubContributions } from '@/components/GithubContributions';
 import { Footer } from '@/components/Footer';
 import { AskAIModal } from '@/components/AskAIModal';
 import { TypingModal } from '@/components/TypingModal';
@@ -74,6 +75,8 @@ export default function HomePage() {
           onOpenAskAI={() => setIsAskAIOpen(true)}
           playSound={playSound}
         />
+
+        <GithubContributions playSound={playSound} />
 
         {/* 3D Spotlight Project Deck */}
         <SpotlightDeck playSound={playSound} />

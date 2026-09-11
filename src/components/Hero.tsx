@@ -2,7 +2,6 @@
 
 import React from 'react';
 import {
-  CheckCircle2,
   MapPin,
   Mail,
   Github,
@@ -27,7 +26,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAskAI, playSound }) => {
       <div className="flex flex-col sm:flex-row items-start gap-6">
         {/* Avatar */}
         <div className="relative group shrink-0">
-          <div className="relative h-24 w-24 sm:h-28 sm:w-28 overflow-hidden rounded-2xl border-2 border-gray-200 dark:border-[#2a2a2a] bg-gray-100 dark:bg-[#1a1a1a] shadow-sm transition-transform duration-300 group-hover:scale-105">
+          <div className="relative h-48 w-48 sm:h-64 sm:w-64 overflow-hidden rounded-2xl border-2 border-gray-200 dark:border-[#2a2a2a] bg-gray-100 dark:bg-[#1a1a1a] shadow-sm transition-transform duration-300 group-hover:scale-105">
             <img
               src={personalInfo.avatarUrl}
               alt={personalInfo.name}
@@ -36,14 +35,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAskAI, playSound }) => {
             />
             <div className="absolute inset-0 rounded-2xl border border-white/20 dark:border-white/5 pointer-events-none" />
           </div>
-          {personalInfo.status.available && (
-            <span
-              className="absolute -bottom-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full border-2 border-white dark:border-[#0a0a0a] bg-emerald-500 shadow-xs"
-              title={personalInfo.status.text}
-            >
-              <span className="h-1.5 w-1.5 rounded-full bg-white pulse-dot"></span>
-            </span>
-          )}
         </div>
 
         {/* Identity */}
@@ -52,9 +43,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAskAI, playSound }) => {
             <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-ink dark:text-white">
               {personalInfo.name}
             </h1>
-            <span className="inline-flex items-center" title="Verified Developer Profile">
-              <CheckCircle2 className="h-5 w-5 fill-blue-500 text-white dark:text-[#0a0a0a]" />
-            </span>
           </div>
 
           <div className="mt-1 flex flex-wrap items-center gap-3 font-mono text-xs text-gray-500 dark:text-[#666]">
@@ -65,10 +53,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAskAI, playSound }) => {
             <span>•</span>
             <span className="text-ink dark:text-[#aaa] font-medium">@{personalInfo.handle}</span>
           </div>
-
-          <p className="mt-2 text-sm sm:text-base font-medium text-gray-600 dark:text-[#999]">
-            {personalInfo.role}
-          </p>
 
           {/* CTAs */}
           <div className="mt-5 flex flex-wrap items-center gap-2.5">
@@ -131,38 +115,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAskAI, playSound }) => {
             <p key={i}>{para}</p>
           ))}
         </div>
-
-        {/* Quick Specs */}
-        <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-2.5">
-          <div className="rounded-lg border border-gray-200/70 dark:border-[#222] bg-gray-50/50 dark:bg-[#141414] p-2.5 text-center">
-            <span className="font-mono text-[9px] uppercase text-gray-400 dark:text-[#555] block mb-0.5">Degree</span>
-            <span className="font-mono text-[11px] font-bold text-ink dark:text-white">BSIT @ NEUST</span>
-          </div>
-          <div className="rounded-lg border border-gray-200/70 dark:border-[#222] bg-gray-50/50 dark:bg-[#141414] p-2.5 text-center">
-            <span className="font-mono text-[9px] uppercase text-gray-400 dark:text-[#555] block mb-0.5">Capstone</span>
-            <span className="font-mono text-[11px] font-bold text-ink dark:text-white">SumEste Portal</span>
-          </div>
-          <a
-            href="https://github.com/envydoes?tab=overview&from=2026-09-01&to=2026-09-11"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => playSound('click')}
-            onMouseEnter={() => playSound('hover')}
-            className="rounded-lg border border-gray-200/70 dark:border-[#222] bg-gray-50/50 dark:bg-[#141414] p-2.5 text-center hover:border-gray-400 dark:hover:border-[#444] transition-colors group"
-          >
-            <span className="font-mono text-[9px] uppercase text-gray-400 dark:text-[#555] block mb-0.5 flex items-center justify-center gap-1">
-              GitHub 2026
-              <ArrowUpRight className="h-2.5 w-2.5 opacity-40 group-hover:opacity-100 transition-opacity" />
-            </span>
-            <span className="font-mono text-[11px] font-bold text-emerald-600 dark:text-emerald-400">166 Contributions</span>
-          </a>
-          <div className="rounded-lg border border-gray-200/70 dark:border-[#222] bg-gray-50/50 dark:bg-[#141414] p-2.5 text-center">
-            <span className="font-mono text-[9px] uppercase text-gray-400 dark:text-[#555] block mb-0.5">Stack</span>
-            <span className="font-mono text-[11px] font-bold text-ink dark:text-white">Full-Stack</span>
-          </div>
         </div>
-
-      </div>
     </section>
   );
 };

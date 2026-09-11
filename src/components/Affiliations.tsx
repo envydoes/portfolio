@@ -79,8 +79,8 @@ export const Affiliations: React.FC<AffiliationsProps> = ({ playSound }) => {
                 <Github className="h-4 w-4" />
                 <span>GitHub (@envydoes)</span>
               </span>
-              <span className="flex items-center gap-1.5 font-mono text-[11px] text-emerald-600 dark:text-emerald-400">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span className="flex items-center gap-1.5 font-mono text-[11px] text-gray-500 dark:text-[#888]">
+                <span className="h-1.5 w-1.5 rounded-full bg-gray-400 dark:bg-[#666]"></span>
                 <span>166 contributions in 2026</span>
                 <ArrowUpRight className="h-3.5 w-3.5 opacity-50 group-hover:opacity-100 transition-opacity" />
               </span>
