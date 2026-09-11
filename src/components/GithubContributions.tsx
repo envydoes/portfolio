@@ -44,7 +44,7 @@ export const GithubContributions: React.FC<GithubContributionsProps> = ({ playSo
       {/* ── Section Header matching Bryl Lim design ── */}
       <div className="mb-5 flex items-baseline justify-between">
         <h3 className="font-mono text-[11px] lowercase tracking-wider text-gray-400 dark:text-[#666] font-semibold">
-          04 — github
+          github
         </h3>
         <a
           href="https://github.com/envydoes?tab=overview&from=2026-09-01&to=2026-09-11"

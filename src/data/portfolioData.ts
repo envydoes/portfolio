@@ -76,7 +76,6 @@ export const portfolioData: PortfolioData = {
     { name: 'Anthropic', category: 'AI & Tools' },
     { name: 'AutoGPT', category: 'AI & Tools' },
     { name: 'Codex', category: 'AI & Tools' },
-    { name: 'PyTorch', category: 'AI & Tools' },
 
     // Tools & Environments
     { name: 'VS Code', category: 'Tools & Others' },
