@@ -70,7 +70,7 @@ export const Certifications: React.FC<CertificationsProps> = ({ playSound }) => 
             role="button"
             tabIndex={0}
             aria-label={`Preview ${cert.title} certificate`}
-            className="group relative flex flex-col items-center rounded-xl bg-gradient-to-b from-gray-50 to-white dark:from-[#141414] dark:to-[#0f0f0f] px-4 py-5 text-center shadow-[0_8px_22px_-14px_rgba(10,10,10,0.15)] dark:shadow-[0_8px_22px_-14px_rgba(0,0,0,0.5)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_18px_36px_-20px_rgba(10,10,10,0.3)] dark:hover:shadow-[0_18px_36px_-20px_rgba(0,0,0,0.7)] border border-gray-200/80 dark:border-[#222] cursor-pointer"
+            className="group relative flex min-h-[280px] flex-col items-center rounded-xl bg-gradient-to-b from-gray-50 to-white dark:from-[#141414] dark:to-[#0f0f0f] px-4 py-5 text-center shadow-[0_8px_22px_-14px_rgba(10,10,10,0.15)] dark:shadow-[0_8px_22px_-14px_rgba(0,0,0,0.5)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_18px_36px_-20px_rgba(10,10,10,0.3)] dark:hover:shadow-[0_18px_36px_-20px_rgba(0,0,0,0.7)] border border-gray-200/80 dark:border-[#222] cursor-pointer"
           >
             {/* Inner border inset like Bryl Lim */}
             <span
@@ -111,18 +111,18 @@ export const Certifications: React.FC<CertificationsProps> = ({ playSound }) => 
             </div>
 
             {/* Credential Title */}
-            <h3 className="relative mt-3 text-[13px] font-semibold leading-snug text-ink dark:text-white px-1 line-clamp-2">
+            <h3 className="relative mt-3 flex h-9 w-full items-start justify-center overflow-hidden px-1 text-[13px] font-semibold leading-snug text-ink dark:text-white line-clamp-2">
               {cert.title}
             </h3>
 
             {/* Issuer & Date */}
-            <p className="relative mt-1 font-mono text-[9.5px] uppercase tracking-wider text-gray-400 dark:text-[#777]">
+            <p className="relative mt-1 flex h-7 items-start justify-center font-mono text-[9.5px] uppercase tracking-wider leading-relaxed text-gray-400 dark:text-[#777]">
               {cert.issuer} {cert.date ? `• ${cert.date}` : ''}
             </p>
 
             {/* Skills preview if present */}
             {cert.skills && (
-              <div className="relative mt-2 flex flex-wrap justify-center gap-1">
+              <div className="relative mt-2 flex min-h-10 w-full flex-wrap content-start justify-center gap-1">
                 {cert.skills.slice(0, 2).map((skill) => (
                   <span
                     key={skill}
@@ -140,7 +140,7 @@ export const Certifications: React.FC<CertificationsProps> = ({ playSound }) => 
             )}
 
             {/* Verify Laurel Wreath Bar matching Bryl Lim */}
-            <div className="relative mt-3 flex items-center gap-1.5 text-gray-300 dark:text-[#444] group-hover:text-ink dark:group-hover:text-white transition-colors">
+            <div className="relative mt-auto flex items-center gap-1.5 pt-3 text-gray-300 dark:text-[#444] group-hover:text-ink dark:group-hover:text-white transition-colors">
               <svg viewBox="0 0 13 22" fill="currentColor" aria-hidden="true" className="h-[13px] w-auto shrink-0">
                 <path d="M0 -4C2.1 -2.6 2.1 2.6 0 4C-2.1 2.6 -2.1 -2.6 0 -4Z" transform="translate(8 5) rotate(46)" />
                 <path d="M0 -4.3C2.3 -2.8 2.3 2.8 0 4.3C-2.3 2.8 -2.3 -2.8 0 -4.3Z" transform="translate(4.6 11) rotate(14)" />
