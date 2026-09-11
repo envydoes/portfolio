@@ -61,16 +61,16 @@ export const GithubContributions: React.FC<GithubContributionsProps> = ({ playSo
       </div>
 
       {/* ── Bryl Lim Style Halftone Dot Matrix Calendar ── */}
-      <div className="relative overflow-x-auto pb-3 pt-1 scrollbar-none">
-        <div className="inline-flex gap-[3px] sm:gap-1 items-center">
+      <div className="relative w-full overflow-hidden pb-3 pt-1">
+        <div className="flex w-full items-center justify-between gap-0">
           {weeks.map((week, weekIdx) => (
-            <div key={weekIdx} className="flex flex-col gap-[3px] sm:gap-1">
+            <div key={weekIdx} className="flex min-w-0 flex-1 flex-col gap-[3px] sm:gap-1">
               {week.map((day, dayIdx) => {
                 if (!day) {
                   return (
                     <div
                       key={`empty-${weekIdx}-${dayIdx}`}
-                      className="w-[10px] h-[10px] sm:w-[11px] sm:h-[11px]"
+                      className="aspect-square w-full"
                     />
                   );
                 }
@@ -86,10 +86,10 @@ export const GithubContributions: React.FC<GithubContributionsProps> = ({ playSo
                       if (day.count > 0) playSound?.('hover');
                     }}
                     onMouseLeave={() => setHoveredDay(null)}
-                    className="relative w-[10px] h-[10px] sm:w-[11px] sm:h-[11px] flex items-center justify-center cursor-pointer group"
+                    className="group relative flex aspect-square w-full min-w-0 cursor-pointer items-center justify-center"
                   >
                     <span
-                      className={`rounded-full transition-transform duration-150 ${dotClass} ${
+                      className={`max-h-full max-w-full rounded-full transition-transform duration-150 ${dotClass} ${
                         isHovered ? 'scale-135 ring-2 ring-blue-500/50' : ''
                       }`}
                     />
