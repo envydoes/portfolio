@@ -447,7 +447,6 @@ export const portfolioData: PortfolioData = {
     {
       name: 'GitHub Open Source Community',
       url: 'https://github.com/envydoes?tab=overview&from=2026-09-01&to=2026-09-11',
-      role: '166 contributions in 2026 • Active Builder',
     },
   ],
 
