@@ -1,0 +1,1079 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joshua M. Madulid ΓÇö Full-Stack Developer &amp; Interaction Designer</title>
+  <meta name="description" content="Crafting polished web experiences, scalable digital systems &amp; intelligent tooling.">
+  <meta name="author" content="Joshua M. Madulid">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Joshua M. Madulid ΓÇö Portfolio">
+  <meta property="og:description" content="Crafting polished web experiences, scalable digital systems &amp; intelligent tooling.">
+  <meta property="og:image" content="images/joshua.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Tailwind CSS CDN for high-velocity utilities -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: ['class', '[data-theme="dark"]'],
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#09090b',
+            surface: '#14141a',
+            surfaceHover: '#1c1c24',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Design Engine CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/jpeg" href="images/joshua.jpg">
+</head>
+<body class="selection:bg-white selection:text-black">
+
+  <!-- ======================================================================
+       1. FLOATING PILL NAVIGATION
+       ====================================================================== -->
+  <nav class="floating-nav" aria-label="Main Navigation">
+    <a href="#hero" class="brand-badge" title="Go to top">
+      <div class="brand-monogram">JM</div>
+      <div class="flex items-center gap-2">
+        <span>Joshua</span>
+        <span class="status-indicator-dot" title="Available for work"></span>
+      </div>
+    </a>
+
+    <ul class="nav-links">
+      <li class="nav-item"><a href="#hero" class="active">Home</a></li>
+      <li class="nav-item"><a href="#works">Works</a></li>
+      <li class="nav-item"><a href="#services">Services</a></li>
+      <li class="nav-item"><a href="#experience">Journey</a></li>
+      <li class="nav-item"><a href="#certifications">Certificates</a></li>
+      <li class="nav-item"><a href="#currently">Currently</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <!-- Sound toggle button -->
+      <button id="sound-toggle" class="icon-btn" title="Toggle tactile sound effects" aria-label="Toggle Sound">
+        <span id="sound-icon"></span>
+      </button>
+
+      <!-- Theme toggle button -->
+      <button id="theme-toggle" class="icon-btn" title="Toggle Light/Dark Theme" aria-label="Toggle Theme">
+        <span id="theme-icon"></span>
+      </button>
+
+      <!-- AI Q&A Button -->
+      <button id="open-ai-modal" class="icon-btn" title="Ask AI about Joshua" aria-label="Ask AI Assistant">
+        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+      </button>
+
+      <!-- CTA -->
+      <a href="#contact" class="cta-btn-sm hidden sm:inline-flex">
+        <span>Let's Talk</span>
+        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </a>
+
+      <!-- Mobile hamburger -->
+      <button id="mobile-toggle" class="icon-btn mobile-toggle" aria-label="Open mobile menu">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-drawer" class="mobile-menu-drawer">
+    <ul class="mobile-menu-links">
+      <li><a href="#hero">01. Home <span>Γåù</span></a></li>
+      <li><a href="#works">02. Selected Works <span>Γåù</span></a></li>
+      <li><a href="#services">03. Capabilities <span>Γåù</span></a></li>
+      <li><a href="#experience">04. Experience <span>Γåù</span></a></li>
+      <li><a href="#certifications">05. Credentials <span>Γåù</span></a></li>
+      <li><a href="#currently">06. Currently <span>Γåù</span></a></li>
+      <li><a href="#contact">07. Contact <span>Γåù</span></a></li>
+    </ul>
+    <div class="pt-6 border-t border-[var(--border-color)] flex items-center justify-between text-sm text-[var(--text-secondary)]">
+      <span>Nueva Ecija, Philippines</span>
+      <span class="status-indicator-dot"></span>
+    </div>
+  </div>
+
+  <!-- Main Container -->
+  <main class="max-w-6xl mx-auto px-6">
+
+    <!-- ====================================================================
+         2. HERO SECTION (Editorial Layout)
+         ==================================================================== -->
+    <section id="hero" class="hero-section">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+        
+        <!-- Left Text Column -->
+        <div class="lg:col-span-7">
+          <!-- Availability & Clock Pill -->
+          <div class="hero-pill-badge reveal-on-scroll">
+            <span class="status-indicator-dot"></span>
+            <span>Available for projects</span>
+            <span class="text-[var(--text-dim)]">ΓÇó</span>
+            <span id="live-time" class="font-mono text-xs text-[var(--text-secondary)]">Loading PH Time...</span>
+          </div>
+
+          <!-- Editorial Headline -->
+          <h1 class="hero-title reveal-on-scroll">
+            Crafting intentional <span class="gradient-text">digital products</span> with clean architecture.
+          </h1>
+
+          <p class="hero-description reveal-on-scroll">
+            I'm <strong class="text-[var(--text-primary)] font-semibold">Joshua M. Madulid</strong> (<code>@envydoes</code>), a full-stack engineer and interaction designer building reliable web platforms with PHP, MySQL, modern web tooling, Docker, and AI-assisted engineering.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="hero-cta-group reveal-on-scroll">
+            <a href="#works" class="btn-primary">
+              <span>Selected Works</span>
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+            </a>
+
+            <button class="btn-secondary copy-email-btn" data-email="madulidjoshuam@gmail.com">
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
+              <span>Copy Email</span>
+            </button>
+
+            <a href="https://github.com/envydoes" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              <span>GitHub</span>
+            </a>
+          </div>
+
+          <!-- Mini Stats Row -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-[var(--border-color)] reveal-on-scroll">
+                          <div>
+                <div class="font-mono text-xl sm:text-2xl font-bold text-[var(--text-primary)]">166+</div>
+                <div class="text-xs text-[var(--text-muted)] font-medium">GitHub Contributions in 2026</div>
+              </div>
+                          <div>
+                <div class="font-mono text-xl sm:text-2xl font-bold text-[var(--text-primary)]">12+</div>
+                <div class="text-xs text-[var(--text-muted)] font-medium">Verified Certifications</div>
+              </div>
+                          <div>
+                <div class="font-mono text-xl sm:text-2xl font-bold text-[var(--text-primary)]">4+</div>
+                <div class="text-xs text-[var(--text-muted)] font-medium">Production &amp; Core Projects</div>
+              </div>
+                          <div>
+                <div class="font-mono text-xl sm:text-2xl font-bold text-[var(--text-primary)]">100%</div>
+                <div class="text-xs text-[var(--text-muted)] font-medium">Dedication to Clean UI/UX</div>
+              </div>
+                      </div>
+        </div>
+
+        <!-- Right Profile Bento Card with 3D Tilt -->
+        <div class="lg:col-span-5 reveal-on-scroll">
+          <div class="hero-card">
+            <div class="hero-avatar-wrap">
+              <img src="images/joshua.jpg" alt="Joshua M. Madulid" class="hero-avatar-img">
+              <div class="absolute bottom-3 left-3 bg-black/70 backdrop-blur-md border border-white/10 rounded-full px-3 py-1 text-xs font-mono text-white flex items-center gap-2">
+                <span class="status-indicator-dot"></span>
+                <span>Nueva Ecija, PH</span>
+              </div>
+            </div>
+
+            <div class="hero-card-meta">
+              <div>
+                <div class="font-bold text-base text-[var(--text-primary)]">Joshua M. Madulid</div>
+                <div class="text-xs text-[var(--text-muted)]">NEUST BSIT ΓÇó Graduating</div>
+              </div>
+              <div class="text-right">
+                <div class="font-mono text-xs font-semibold text-[var(--accent-emerald)]">100% Reliable</div>
+                <div class="text-xs text-[var(--text-muted)]">Verified Track Record</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================================
+       3. INFINITE TECH MARQUEE / TICKER
+       ====================================================================== -->
+  <div class="ticker-wrap" aria-hidden="true">
+    <div class="ticker-track">
+      <span class="ticker-item">Full-Stack Web Development <span class="ticker-dot"></span></span>
+      <span class="ticker-item">PHP 8 & MySQL <span class="ticker-dot"></span></span>
+      <span class="ticker-item">UI/UX & Interaction Design <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Google AI Certified <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Docker & DevOps <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Tailwind CSS <span class="ticker-dot"></span></span>
+      <span class="ticker-item">RESTful APIs & Microservices <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Figma Design Systems <span class="ticker-dot"></span></span>
+      <span class="ticker-item">System Architecture <span class="ticker-dot"></span></span>
+      <!-- Duplicate for seamless loop -->
+      <span class="ticker-item">Full-Stack Web Development <span class="ticker-dot"></span></span>
+      <span class="ticker-item">PHP 8 & MySQL <span class="ticker-dot"></span></span>
+      <span class="ticker-item">UI/UX & Interaction Design <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Google AI Certified <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Docker & DevOps <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Tailwind CSS <span class="ticker-dot"></span></span>
+      <span class="ticker-item">RESTful APIs & Microservices <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Figma Design Systems <span class="ticker-dot"></span></span>
+      <span class="ticker-item">System Architecture <span class="ticker-dot"></span></span>
+    </div>
+  </div>
+
+  <main class="max-w-6xl mx-auto px-6">
+
+    <!-- ====================================================================
+         4. SELECTED WORKS / PROJECTS (The Core Showcase)
+         ==================================================================== -->
+    <section id="works" class="section-wrapper">
+      <div class="section-header reveal-on-scroll">
+        <div class="section-label">
+          <span>// 01</span>
+          <span>Selected Works</span>
+        </div>
+        <h2 class="section-title">Production systems & design craftsmanship.</h2>
+        <p class="section-subtitle">Real platforms built with robust logic, intentional interfaces, and responsive scalability.</p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="filter-tabs reveal-on-scroll">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="full-stack">Full-Stack</button>
+        <button class="filter-btn" data-filter="mobile">Mobile</button>
+        <button class="filter-btn" data-filter="ui-ux">UI/UX & Design</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <article class="project-card reveal-on-scroll" data-category="full-stack">
+            <div class="project-image-box">
+              <img src="https://sum-este-portal.digital/uploads/site/sitelogo_8ba5ce5e050ec6c3.png" alt="SumEste Portal" class="project-img" loading="lazy">
+              <div class="project-badge-pill">Live Production</div>
+              <div class="project-year-pill">2024 - 2025</div>
+            </div>
+
+            <div class="project-content">
+              <div class="project-tags">
+                                  <span class="project-tag">PHP</span>
+                                  <span class="project-tag">MySQL</span>
+                                  <span class="project-tag">Tailwind CSS</span>
+                                  <span class="project-tag">Live System</span>
+                              </div>
+
+              <h3 class="project-title">SumEste Portal</h3>
+              <p class="project-desc">Cross-platform resident tracking system built for the Sumacab Este community, helping organize resident information and support efficient local administration.</p>
+
+                              <ul class="project-highlights">
+                                      <li>Cross-platform access for efficient community administration</li>
+                                      <li>Centralized resident records and tracking workflows</li>
+                                      <li>Designed around the needs of residents and local administrators in Sumacab Este</li>
+                                  </ul>
+              
+              <div class="project-actions">
+                                  <a href="https://sum-este-portal.digital" target="_blank" rel="noopener noreferrer" class="action-link-btn">
+                    <span>Live Platform</span>
+                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                  </a>
+                
+                                  <a href="https://github.com/envydoes/SumEste-Portal" target="_blank" rel="noopener noreferrer" class="action-link">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                    <span>Source Code</span>
+                  </a>
+                
+                
+                              </div>
+            </div>
+          </article>
+                  <article class="project-card reveal-on-scroll" data-category="full-stack">
+            <div class="project-image-box">
+              <img src="https://raw.githubusercontent.com/envydoes/momms-system/main/images/LOGO.png" alt="Momms Inventory Management System" class="project-img" loading="lazy">
+              <div class="project-badge-pill">Core System</div>
+              <div class="project-year-pill">2024</div>
+            </div>
+
+            <div class="project-content">
+              <div class="project-tags">
+                                  <span class="project-tag">PHP</span>
+                                  <span class="project-tag">MySQL</span>
+                                  <span class="project-tag">JavaScript</span>
+                                  <span class="project-tag">Tailwind CSS</span>
+                              </div>
+
+              <h3 class="project-title">Momms Inventory Management System</h3>
+              <p class="project-desc">Modern organizational and inventory management web dashboard with responsive data tables, automated stock tracking, and analytical reporting.</p>
+
+                              <ul class="project-highlights">
+                                      <li>Interactive analytics dashboard with automated inventory and stock auditing</li>
+                                      <li>Secure transactional database operations and granular user permissions</li>
+                                      <li>Responsive layout optimized for high-density administrative workflows</li>
+                                  </ul>
+              
+              <div class="project-actions">
+                
+                                  <a href="https://github.com/envydoes/momms-system" target="_blank" rel="noopener noreferrer" class="action-link">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                    <span>Source Code</span>
+                  </a>
+                
+                
+                              </div>
+            </div>
+          </article>
+                  <article class="project-card reveal-on-scroll" data-category="mobile">
+            <div class="project-image-box">
+              <img src="https://raw.githubusercontent.com/envydoes/ionic-TatakPH-APP/main/APP/tatakPH/src/assets/imgs/logo.png" alt="TatakPH Mobile Application" class="project-img" loading="lazy">
+              <div class="project-badge-pill">Mobile App</div>
+              <div class="project-year-pill">2024</div>
+            </div>
+
+            <div class="project-content">
+              <div class="project-tags">
+                                  <span class="project-tag">Ionic</span>
+                                  <span class="project-tag">TypeScript</span>
+                                  <span class="project-tag">Capacitor</span>
+                                  <span class="project-tag">Mobile</span>
+                              </div>
+
+              <h3 class="project-title">TatakPH Mobile Application</h3>
+              <p class="project-desc">Cross-platform mobile application highlighting Filipino culture, heritage, and local brand showcases with offline caching.</p>
+
+                              <ul class="project-highlights">
+                                      <li>Smooth mobile-first navigation and native device capability integration</li>
+                                      <li>Dynamic catalog of cultural exhibits and local brand directories</li>
+                                      <li>Offline caching and responsive UI across iOS and Android viewports</li>
+                                  </ul>
+              
+              <div class="project-actions">
+                
+                                  <a href="https://github.com/envydoes/ionic-TatakPH-APP" target="_blank" rel="noopener noreferrer" class="action-link">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                    <span>Source Code</span>
+                  </a>
+                
+                
+                              </div>
+            </div>
+          </article>
+                  <article class="project-card reveal-on-scroll" data-category="full-stack">
+            <div class="project-image-box">
+              <img src="https://raw.githubusercontent.com/envydoes/aurora/main/images/logo.png" alt="Aurora Platform" class="project-img" loading="lazy">
+              <div class="project-badge-pill">Tourism Platform</div>
+              <div class="project-year-pill">2024</div>
+            </div>
+
+            <div class="project-content">
+              <div class="project-tags">
+                                  <span class="project-tag">PHP</span>
+                                  <span class="project-tag">HTML5</span>
+                                  <span class="project-tag">CSS3</span>
+                                  <span class="project-tag">JavaScript</span>
+                              </div>
+
+              <h3 class="project-title">Aurora Platform</h3>
+              <p class="project-desc">A web-based tourism and accommodation platform designed to help visitors discover destinations, plan stays, and explore local experiences.</p>
+
+                              <ul class="project-highlights">
+                                      <li>Destination discovery and accommodation browsing experience</li>
+                                      <li>Responsive interface for exploring local tourism content</li>
+                                      <li>Human-computer interaction project built with PHP and web technologies</li>
+                                  </ul>
+              
+              <div class="project-actions">
+                
+                                  <a href="https://github.com/envydoes/aurora" target="_blank" rel="noopener noreferrer" class="action-link">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                    <span>Source Code</span>
+                  </a>
+                
+                
+                              </div>
+            </div>
+          </article>
+                  <article class="project-card reveal-on-scroll" data-category="ui-ux">
+            <div class="project-image-box">
+              <img src="images/atom-ai/chat.jpg" alt="ATOM AI ΓÇö Conversing App UI/UX" class="project-img" loading="lazy">
+              <div class="project-badge-pill">Design System</div>
+              <div class="project-year-pill">2024</div>
+            </div>
+
+            <div class="project-content">
+              <div class="project-tags">
+                                  <span class="project-tag">Figma</span>
+                                  <span class="project-tag">UI/UX</span>
+                                  <span class="project-tag">Design System</span>
+                                  <span class="project-tag">20 Screens</span>
+                              </div>
+
+              <h3 class="project-title">ATOM AI ΓÇö Conversing App UI/UX</h3>
+              <p class="project-desc">Comprehensive conversing app interface design with home chat, login, cloud space, and 20 supporting high-fidelity screens organized in Figma.</p>
+
+                              <ul class="project-highlights">
+                                      <li>Complete Figma design system with components, color tokens, and typographies</li>
+                                      <li>20 interactive screen states spanning auth, chats, settings, and empty states</li>
+                                      <li>Human-centered conversational user experience</li>
+                                  </ul>
+              
+              <div class="project-actions">
+                
+                
+                                  <button class="action-link-btn open-gallery-btn" data-screens='[{"id":"chat","title":"Home Chat","image":"images\/atom-ai\/chat.jpg"},{"id":"login","title":"Login Screen","image":"images\/atom-ai\/login.jpg"},{"id":"signup","title":"Sign Up Screen","image":"images\/atom-ai\/signup.jpg"},{"id":"initiate-atom","title":"Initiate ATOM","image":"images\/atom-ai\/initiate-atom.png"},{"id":"cloud-space","title":"Cloud Space","image":"images\/atom-ai\/cloud-space.jpg"},{"id":"cloud-space-2","title":"Cloud Space Detail","image":"images\/atom-ai\/cloud-space-2.jpg"},{"id":"images","title":"Images View","image":"images\/atom-ai\/images.jpg"},{"id":"exports","title":"Exports View","image":"images\/atom-ai\/exports.jpg"},{"id":"archived","title":"Archived Records","image":"images\/atom-ai\/archived.jpg"},{"id":"profile-settings","title":"Profile & Settings","image":"images\/atom-ai\/profile-settings.jpg"},{"id":"profile-settings-1","title":"Profile & Settings Detail","image":"images\/atom-ai\/profile-settings-1.jpg"},{"id":"profile-settings-2","title":"Profile & Settings Alternate","image":"images\/atom-ai\/profile-settings-2.jpg"},{"id":"au","title":"AU Screen","image":"images\/atom-ai\/au.png"},{"id":"au-1","title":"AU Screen 1","image":"images\/atom-ai\/au-1.png"},{"id":"au-3","title":"AU Screen 3","image":"images\/atom-ai\/au-3.png"},{"id":"au-4","title":"AU Screen 4","image":"images\/atom-ai\/au-4.png"},{"id":"au-5","title":"AU Screen 5","image":"images\/atom-ai\/au-5.png"},{"id":"internal-empty","title":"Internal Empty State","image":"images\/atom-ai\/internal-empty.png"},{"id":"internal-empty-1","title":"Internal Empty State 1","image":"images\/atom-ai\/internal-empty-1.png"},{"id":"internal-empty-2","title":"Internal Empty State 2","image":"images\/atom-ai\/internal-empty-2.png"}]'>
+                    <span>View 20 Screens</span>
+                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                  </button>
+                
+                                  <a href="https://www.figma.com/design/W3NBVeRn7wP39e3Y5dC1jh/ITHC-CONVERSING-APP-%22ATOM-AI%22?node-id=0-1&amp;p=f&amp;t=Yk4JUGMM02LuC87E-0" target="_blank" rel="noopener noreferrer" class="action-link">
+                    <span>Figma Workspace Γåù</span>
+                  </a>
+                              </div>
+            </div>
+          </article>
+              </div>
+    </section>
+
+    <!-- ====================================================================
+         5. CAPABILITIES & SERVICES (Bento Grid)
+         ==================================================================== -->
+    <section id="services" class="section-wrapper">
+      <div class="section-header reveal-on-scroll">
+        <div class="section-label">
+          <span>// 02</span>
+          <span>Capabilities</span>
+        </div>
+        <h2 class="section-title">End-to-end execution.</h2>
+        <p class="section-subtitle">Bridging engineering rigor with interaction design to craft full-fledged digital platforms.</p>
+      </div>
+
+      <div class="services-grid">
+                  <div class="service-card reveal-on-scroll">
+            <div class="service-num">01 //</div>
+            <h3 class="service-title">Full-Stack Web Engineering</h3>
+            <p class="service-desc">Architecting performant, production-ready web platforms using clean PHP, MySQL, modern JavaScript, and Tailwind CSS. Built with modular codebases and secure workflows.</p>
+            <div class="service-tags">
+                              <span class="service-tag font-mono">PHP</span>
+                              <span class="service-tag font-mono">MySQL</span>
+                              <span class="service-tag font-mono">JavaScript</span>
+                              <span class="service-tag font-mono">REST APIs</span>
+                              <span class="service-tag font-mono">Modular Architecture</span>
+                          </div>
+          </div>
+                  <div class="service-card reveal-on-scroll">
+            <div class="service-num">02 //</div>
+            <h3 class="service-title">UI/UX &amp; Interaction Design</h3>
+            <p class="service-desc">Crafting clean, editorial-style interfaces with noise-free visual hierarchy, robust design systems, and responsive prototypes that make digital products feel effortless.</p>
+            <div class="service-tags">
+                              <span class="service-tag font-mono">Figma</span>
+                              <span class="service-tag font-mono">Design Systems</span>
+                              <span class="service-tag font-mono">Prototyping</span>
+                              <span class="service-tag font-mono">Micro-Interactions</span>
+                              <span class="service-tag font-mono">Wireframing</span>
+                          </div>
+          </div>
+                  <div class="service-card reveal-on-scroll">
+            <div class="service-num">03 //</div>
+            <h3 class="service-title">Generative AI &amp; Intelligent Tooling</h3>
+            <p class="service-desc">Google AI Certified developer implementing LLMs, Gemini, Claude, and intelligent workflow automation to solve real-world problems and supercharge productivity.</p>
+            <div class="service-tags">
+                              <span class="service-tag font-mono">Google AI Certified</span>
+                              <span class="service-tag font-mono">Prompt Engineering</span>
+                              <span class="service-tag font-mono">OpenAI &amp; Gemini</span>
+                              <span class="service-tag font-mono">Automation</span>
+                          </div>
+          </div>
+                  <div class="service-card reveal-on-scroll">
+            <div class="service-num">04 //</div>
+            <h3 class="service-title">DevOps &amp; Cloud Deployment</h3>
+            <p class="service-desc">Streamlining deployment lifecycles with Docker containerization, Coolify self-hosting, GitHub Actions automation, and scalable cloud hosting infrastructure.</p>
+            <div class="service-tags">
+                              <span class="service-tag font-mono">Docker</span>
+                              <span class="service-tag font-mono">Coolify</span>
+                              <span class="service-tag font-mono">GitHub Actions</span>
+                              <span class="service-tag font-mono">AWS / GCP</span>
+                              <span class="service-tag font-mono">CI/CD</span>
+                          </div>
+          </div>
+              </div>
+    </section>
+
+    <!-- ====================================================================
+         6. EXPERIENCE & JOURNEY (Timeline)
+         ==================================================================== -->
+    <section id="experience" class="section-wrapper">
+      <div class="section-header reveal-on-scroll">
+        <div class="section-label">
+          <span>// 03</span>
+          <span>Journey</span>
+        </div>
+        <h2 class="section-title">Education & hands-on development.</h2>
+        <p class="section-subtitle">A proven history of continuous learning, systems engineering, and live project deliverables.</p>
+      </div>
+
+      <div class="flex flex-col gap-4">
+                  <div class="timeline-card reveal-on-scroll">
+            <div class="timeline-header">
+              <div class="flex items-center gap-3">
+                <span class="status-indicator-dot"></span>
+                <h3 class="timeline-title">BS Information Technology (Graduating)</h3>
+              </div>
+              <span class="timeline-period">2023 ΓÇö Present</span>
+            </div>
+            <div class="timeline-org">Nueva Ecija University of Science and Technology (NEUST) ΓÇó Nueva Ecija, Philippines</div>
+            <p class="timeline-desc">Specializing in software engineering, full-stack systems, database architecture, and cloud deployment with strong academic and project execution.</p>
+          </div>
+                  <div class="timeline-card reveal-on-scroll">
+            <div class="timeline-header">
+              <div class="flex items-center gap-3">
+                <span class="status-indicator-dot"></span>
+                <h3 class="timeline-title">Hands-on Development &amp; Systems Engineering</h3>
+              </div>
+              <span class="timeline-period">2023 ΓÇö 2024</span>
+            </div>
+            <div class="timeline-org">Self-directed Production Builds &amp; Open Source ΓÇó Philippines</div>
+            <p class="timeline-desc">Engineered live web platforms including SumEste Portal and Momms Inventory System, building hands-on mastery in PHP, MySQL, APIs, and modern UI architectures.</p>
+          </div>
+              </div>
+    </section>
+
+    <!-- ====================================================================
+         7. VERIFIED CERTIFICATIONS & CREDENTIALS
+         ==================================================================== -->
+    <section id="certifications" class="section-wrapper">
+      <div class="section-header reveal-on-scroll">
+        <div class="section-label">
+          <span>// 04</span>
+          <span>Credentials</span>
+        </div>
+        <h2 class="section-title">12 verified professional certifications.</h2>
+        <p class="section-subtitle">Validated skills in Artificial Intelligence, Enterprise Architecture, Cisco Networking, and High-Performance Web Engineering.</p>
+      </div>
+
+      <div class="certs-grid">
+                  <div class="cert-card reveal-on-scroll"
+               data-title="Google AI Professional Certificate"
+               data-issuer="Google &amp; Coursera"
+               data-date="Sep 2, 2026"
+               data-id="H9QRZNAA0N74"
+               data-desc="Completed comprehensive 8-course online professional certificate program demonstrating mastery in AI workflows, prototyping, and deploying custom AI solutions."
+               data-img="images/google-ai-professional-certificate.png"
+               data-verify="https://coursera.org/verify/professional-cert/H9QRZNAA0N74"
+               data-skills='["AI Fundamentals","Brainstorming & Planning","Data Analysis","App Building","Prompt Engineering"]'>
+            
+            <div class="cert-top">
+              <span class="cert-issuer">Google &amp; Coursera</span>
+              <span class="cert-date">Sep 2, 2026</span>
+            </div>
+
+            <h3 class="cert-title">Google AI Professional Certificate</h3>
+            
+                          <div class="cert-id">ID: H9QRZNAA0N74</div>
+            
+            <div class="cert-footer">
+              <span class="cert-view-btn">
+                <span>View Certificate</span>
+                <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+              </span>
+              <span class="text-xs font-mono text-[var(--accent-emerald)]">Verified Γ£ô</span>
+            </div>
+          </div>
+                  <div class="cert-card reveal-on-scroll"
+               data-title="JavaScript Essentials 2"
+               data-issuer="DICT-ITU &amp; Cisco Networking Academy"
+               data-date="Sep 5, 2026"
+               data-id="36401653-fcfe-4298-b5ba-acee36859624"
+               data-desc="Completed JavaScript Essentials 2 through Cisco Networking Academy under the DICT-ITU DTC Initiative."
+               data-img="images/javascript-essentials-2-certificate.png"
+               data-verify="https://www.netacad.com/certificates/?issuanceId=36401653-fcfe-4298-b5ba-acee36859624"
+               data-skills='["JavaScript","Programming Fundamentals","Cisco Networking Academy"]'>
+            
+            <div class="cert-top">
+              <span class="cert-issuer">DICT-ITU &amp; Cisco Networking Academy</span>
+              <span class="cert-date">Sep 5, 2026</span>
+            </div>
+
+            <h3 class="cert-title">JavaScript Essentials 2</h3>
+            
+                          <div class="cert-id">ID: 36401653-fcfe-4298-b5ba-acee36859624</div>
+            
+            <div class="cert-footer">
+              <span class="cert-view-btn">
+                <span>View Certificate</span>
+                <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+              </span>
+              <span class="text-xs font-mono text-[var(--accent-emerald)]">Verified Γ£ô</span>
+            </div>
+          </div>
+                  <div class="cert-card reveal-on-scroll"
+               data-title="Microsoft Artificial Intelligence: Azure AI Fundamentals"
+               data-issuer="TESDA Online Program &amp; Microsoft"
+               data-date="Aug 29, 2026"
+               data-id="BRjc11piiK"
+               data-desc="Completed Microsoft Artificial Intelligence Course: Azure AI Fundamentals covering machine learning concepts and cognitive services."
+               data-img="images/tesda-azure-ai-fundamentals.png"
+               data-verify="#"
+               data-skills='["Azure AI","Artificial Intelligence","Microsoft","Cloud Fundamentals"]'>
+            
+            <div class="cert-top">
+              <span class="cert-issuer">TESDA Online Program &amp; Microsoft</span>
+              <span class="cert-date">Aug 29, 2026</span>
+            </div>
+
+            <h3 class="cert-title">Microsoft Artificial Intelligence: Azure AI Fundamentals</h3>
+            
+                          <div class="cert-id">ID: BRjc11piiK</div>
+            
+            <div class="cert-footer">
+              <span class="cert-view-btn">
+                <span>View Certificate</span>
+                <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+              </span>
+              <span class="text-xs font-mono text-[var(--accent-emerald)]">Verified Γ£ô</span>
+            </div>
+          </div>
+                  <div class="cert-card reveal-on-scroll"
+               data-title="Web Performance Certification"
+               data-issuer="CodeCred"
+               data-date="Aug 23, 2026"
+               data-id="9998cb4e-8640-4cff-8696-94494f17b4fe"
+               data-desc="Advanced CodeCred certification demonstrating knowledge of web performance metrics, Core Web Vitals, asset optimization, and caching."
+               data-img="images/codecred-web-performance.png"
+               data-verify="https://www.codecred.dev/embed/certificates/9998cb4e-8640-4cff-8696-94494f17b4fe"
+               data-skills='["Web Performance","Core Web Vitals","Optimization","High-Performance Architecture"]'>
+            
+            <div class="cert-top">
+              <span class="cert-issuer">CodeCred</span>
+              <span class="cert-date">Aug 23, 2026</span>
+            </div>
+
+            <h3 class="cert-title">Web Performance Certification</h3>
+            
+                          <div class="cert-id">ID: 9998cb4e-8640-4cff-8696-94494f17b4fe</div>
+            
+            <div class="cert-footer">
+              <span class="cert-view-btn">
+                <span>View Certificate</span>
+                <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+              </span>
+              <span class="text-xs font-mono text-[var(--accent-emerald)]">Verified Γ£ô</span>
+            </div>
+          </div>
+                  <div class="cert-card reveal-on-scroll"
+               data-title="Enterprise Architecture"
+               data-issuer="UpskillTechPH"
+               data-date="Aug 7, 2026"
+               data-id="9853e2d92b41f8dc5d2eccc485cc9d7c"
+               data-desc="Learning Advocate Series webinar on enterprise system architecture principles, high-availability infrastructure, and software integration."
+               data-img="images/upskill-enterprise-architecture.png"
+               data-verify="https://upskilltechph.com/verify?id=9853e2d92b41f8dc5d2eccc485cc9d7c"
+               data-skills='["Enterprise Systems","Scalable Architecture","System Design"]'>
+            
+            <div class="cert-top">
+              <span class="cert-issuer">UpskillTechPH</span>
+              <span class="cert-date">Aug 7, 2026</span>
+            </div>
+
+            <h3 class="cert-title">Enterprise Architecture</h3>
+            
+                          <div class="cert-id">ID: 9853e2d92b41f8dc5d2eccc485cc9d7c</div>
+            
+            <div class="cert-footer">
+              <span class="cert-view-btn">
+                <span>View Certificate</span>
+                <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+              </span>
+              <span class="text-xs font-mono text-[var(--accent-emerald)]">Verified Γ£ô</span>
+            </div>
+          </div>
+                  <div class="cert-card reveal-on-scroll"
+               data-title="System Integration &amp; Connecting Apps via API"
+               data-issuer="UpskillTechPH"
+               data-date="Aug 8, 2026"
+               data-id="56ab14362a454903c0bc1b32fa70a5ae"
+               data-desc="Web Dev training session on architecting reliable system integrations, API consumption, payload security, and cross-platform communication."
+               data-img="images/upskill-system-integration.png"
+               data-verify="https://upskilltechph.com/verify?id=56ab14362a454903c0bc1b32fa70a5ae"
+               data-skills='["REST APIs","System Integration","Webhooks","API Security"]'>
+            
+            <div class="cert-top">
+              <span class="cert-issuer">UpskillTechPH</span>
+              <span class="cert-date">Aug 8, 2026</span>
+            </div>
+
+            <h3 class="cert-title">System Integration &amp; Connecting Apps via API</h3>
+            
+                          <div class="cert-id">ID: 56ab14362a454903c0bc1b32fa70a5ae</div>
+            
+            <div class="cert-footer">
+              <span class="cert-view-btn">
+                <span>View Certificate</span>
+                <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+              </span>
+              <span class="text-xs font-mono text-[var(--accent-emerald)]">Verified Γ£ô</span>
+            </div>
+          </div>
+                  <div class="cert-card reveal-on-scroll"
+               data-title="Cyber Threats in 2026 &amp; How to Stay Safe"
+               data-issuer="UpskillTechPH"
+               data-date="Aug 8, 2026"
+               data-id="2f88636f874d94a79aa95683aedacffb"
+               data-desc="Cyber Awareness session on modern threat vectors, defensive web practices, encryption standards, and digital safety in 2026."
+               data-img="images/upskill-cyber-awareness.png"
+               data-verify="#"
+               data-skills='["Cybersecurity","Threat Analysis","Data Privacy","App Hardening"]'>
+            
+            <div class="cert-top">
+              <span class="cert-issuer">UpskillTechPH</span>
+              <span class="cert-date">Aug 8, 2026</span>
+            </div>
+
+            <h3 class="cert-title">Cyber Threats in 2026 &amp; How to Stay Safe</h3>
+            
+                          <div class="cert-id">ID: 2f88636f874d94a79aa95683aedacffb</div>
+            
+            <div class="cert-footer">
+              <span class="cert-view-btn">
+                <span>View Certificate</span>
+                <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+              </span>
+              <span class="text-xs font-mono text-[var(--accent-emerald)]">Verified Γ£ô</span>
+            </div>
+          </div>
+                  <div class="cert-card reveal-on-scroll"
+               data-title="Tech Interview Tactics | Sell Your Value"
+               data-issuer="UpskillTechPH"
+               data-date="Aug 19, 2026"
+               data-id="6a3bc77194e5e3dc6f7d21b444154680"
+               data-desc="Pro Skills training on effectively conveying engineering impact, technical competency during whiteboard/system interviews, and aligning value."
+               data-img="images/upskill-interview-tactics.png"
+               data-verify="https://upskilltechph.com/verify?id=6a3bc77194e5e3dc6f7d21b444154680"
+               data-skills='["Technical Interviews","Value Articulation","Career Readiness"]'>
+            
+            <div class="cert-top">
+              <span class="cert-issuer">UpskillTechPH</span>
+              <span class="cert-date">Aug 19, 2026</span>
+            </div>
+
+            <h3 class="cert-title">Tech Interview Tactics | Sell Your Value</h3>
+            
+                          <div class="cert-id">ID: 6a3bc77194e5e3dc6f7d21b444154680</div>
+            
+            <div class="cert-footer">
+              <span class="cert-view-btn">
+                <span>View Certificate</span>
+                <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+              </span>
+              <span class="text-xs font-mono text-[var(--accent-emerald)]">Verified Γ£ô</span>
+            </div>
+          </div>
+                  <div class="cert-card reveal-on-scroll"
+               data-title="AI Tools 101: How to Use Google Gemini Like a Pro"
+               data-issuer="UpskillTechPH"
+               data-date="Aug 22, 2026"
+               data-id="6c7031cf65593c2af17fab22ed26cfd9"
+               data-desc="AI Tools webinar on using Google Gemini for research, prompt engineering, and professional productivity workflows."
+               data-img=""
+               data-verify="https://upskilltechph.com/verify?id=6c7031cf65593c2af17fab22ed26cfd9"
+               data-skills='["Generative AI","Prompt Engineering","Google Gemini","Productivity"]'>
+            
+            <div class="cert-top">
+              <span class="cert-issuer">UpskillTechPH</span>
+              <span class="cert-date">Aug 22, 2026</span>
+            </div>
+
+            <h3 class="cert-title">AI Tools 101: How to Use Google Gemini Like a Pro</h3>
+            
+                          <div class="cert-id">ID: 6c7031cf65593c2af17fab22ed26cfd9</div>
+            
+            <div class="cert-footer">
+              <span class="cert-view-btn">
+                <span>View Certificate</span>
+                <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+              </span>
+              <span class="text-xs font-mono text-[var(--accent-emerald)]">Verified Γ£ô</span>
+            </div>
+          </div>
+                  <div class="cert-card reveal-on-scroll"
+               data-title="Database 101: Data Storage, SQL &amp; Query Optimization"
+               data-issuer="UpskillTechPH"
+               data-date="Aug 21, 2026"
+               data-id="18d3e9f7aea763a1b08d1bdd081e3df7"
+               data-desc="Database webinar on relational operations, foundational SQL, database normalization, and query optimization."
+               data-img=""
+               data-verify="https://upskilltechph.com/verify?id=18d3e9f7aea763a1b08d1bdd081e3df7"
+               data-skills='["Relational Databases","SQL","Data Modeling","Optimization"]'>
+            
+            <div class="cert-top">
+              <span class="cert-issuer">UpskillTechPH</span>
+              <span class="cert-date">Aug 21, 2026</span>
+            </div>
+
+            <h3 class="cert-title">Database 101: Data Storage, SQL &amp; Query Optimization</h3>
+            
+                          <div class="cert-id">ID: 18d3e9f7aea763a1b08d1bdd081e3df7</div>
+            
+            <div class="cert-footer">
+              <span class="cert-view-btn">
+                <span>View Certificate</span>
+                <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+              </span>
+              <span class="text-xs font-mono text-[var(--accent-emerald)]">Verified Γ£ô</span>
+            </div>
+          </div>
+                  <div class="cert-card reveal-on-scroll"
+               data-title="Emerging IT Innovations 2026"
+               data-issuer="UpskillTechPH"
+               data-date="Aug 22, 2026"
+               data-id="e4555f730d995e5f5b63cc79fed6d1e1"
+               data-desc="Masterclass on emerging IT trends, disruptive technologies, hyperautomation, and digital transformation readiness."
+               data-img=""
+               data-verify="https://upskilltechph.com/verify?id=e4555f730d995e5f5b63cc79fed6d1e1"
+               data-skills='["Emerging Tech","IT Strategy","Digital Transformation"]'>
+            
+            <div class="cert-top">
+              <span class="cert-issuer">UpskillTechPH</span>
+              <span class="cert-date">Aug 22, 2026</span>
+            </div>
+
+            <h3 class="cert-title">Emerging IT Innovations 2026</h3>
+            
+                          <div class="cert-id">ID: e4555f730d995e5f5b63cc79fed6d1e1</div>
+            
+            <div class="cert-footer">
+              <span class="cert-view-btn">
+                <span>View Certificate</span>
+                <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+              </span>
+              <span class="text-xs font-mono text-[var(--accent-emerald)]">Verified Γ£ô</span>
+            </div>
+          </div>
+                  <div class="cert-card reveal-on-scroll"
+               data-title="Google Analytics Certification"
+               data-issuer="Google Skillshop"
+               data-date="May 13, 2026"
+               data-id="182299055"
+               data-desc="Verified Skillshop certification on setting up GA4 properties, tracking events, data reporting, and digital analytics."
+               data-img=""
+               data-verify="https://skillshop.credential.net/569e44ed-9856-484d-bfbd-1eddc77996a4"
+               data-skills='["Google Analytics 4","Measurement","Reporting","Insights"]'>
+            
+            <div class="cert-top">
+              <span class="cert-issuer">Google Skillshop</span>
+              <span class="cert-date">May 13, 2026</span>
+            </div>
+
+            <h3 class="cert-title">Google Analytics Certification</h3>
+            
+                          <div class="cert-id">ID: 182299055</div>
+            
+            <div class="cert-footer">
+              <span class="cert-view-btn">
+                <span>View Certificate</span>
+                <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+              </span>
+              <span class="text-xs font-mono text-[var(--accent-emerald)]">Verified Γ£ô</span>
+            </div>
+          </div>
+              </div>
+    </section>
+
+    <!-- ====================================================================
+         8. "CURRENTLY" LIVE BENTO BOARD
+         ==================================================================== -->
+    <section id="currently" class="section-wrapper">
+      <div class="section-header reveal-on-scroll">
+        <div class="section-label">
+          <span>// 05</span>
+          <span>Live Status</span>
+        </div>
+        <h2 class="section-title">What I'm focused on right now.</h2>
+        <p class="section-subtitle">A transparent snapshot of current targets, active builds, and everyday routine.</p>
+      </div>
+
+      <div class="currently-grid">
+                  <div class="currently-card reveal-on-scroll">
+            <div class="currently-label">Primary Goal</div>
+            <div class="currently-val">Building scalable, production-ready full-stack web applications and systems</div>
+          </div>
+                  <div class="currently-card reveal-on-scroll">
+            <div class="currently-label">Currently Learning</div>
+            <div class="currently-val">Advanced DevOps pipelines (Docker, Coolify, GitHub Actions) &amp; Cloud Infrastructure</div>
+          </div>
+                  <div class="currently-card reveal-on-scroll">
+            <div class="currently-label">Working On</div>
+            <div class="currently-val">SumEste Portal (live capstone) &amp; polishing full-stack systems with PHP &amp; MySQL</div>
+          </div>
+                  <div class="currently-card reveal-on-scroll">
+            <div class="currently-label">Recent Milestone</div>
+            <div class="currently-val">Earned Google AI Professional Certificate (8 Courses) via Coursera</div>
+          </div>
+                  <div class="currently-card reveal-on-scroll">
+            <div class="currently-label">Fuel of Choice</div>
+            <div class="currently-val">Brewed coffee &amp; intense problem-solving sessions</div>
+          </div>
+                  <div class="currently-card reveal-on-scroll">
+            <div class="currently-label">Based In</div>
+            <div class="currently-val">Nueva Ecija, Philippines (Open to Remote, Hybrid &amp; On-site roles)</div>
+          </div>
+              </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================================
+       9. FOOTER & CONTACT
+       ====================================================================== -->
+  <footer id="contact" class="footer-section">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
+        <div class="lg:col-span-8">
+          <div class="section-label">
+            <span>// Get in Touch</span>
+          </div>
+          <h2 class="footer-hero-text">
+            Let's build something <span class="gradient-text">remarkable</span> together.
+          </h2>
+          <p class="text-lg text-[var(--text-secondary)] mb-8 max-w-xl">
+            Have an ambitious project, a full-stack engineering challenge, or looking to collaborate? My inbox is always open.
+          </p>
+
+          <div class="footer-email-box copy-email-btn" data-email="madulidjoshuam@gmail.com">
+            <span class="font-mono text-base font-semibold text-[var(--text-primary)]">madulidjoshuam@gmail.com</span>
+            <span class="text-xs font-mono text-[var(--accent-emerald)] bg-[var(--bg-subtle)] px-2.5 py-1 rounded-full">Click to Copy</span>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <a href="mailto:madulidjoshuam@gmail.com" class="btn-primary">
+              <span>Send Email</span>
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/joshuamadulid" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/envydoes" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+              <span>GitHub</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-4 flex flex-col justify-end">
+          <div class="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-2xl p-6">
+            <h4 class="font-bold text-base mb-2">Location & Time</h4>
+            <p class="text-sm text-[var(--text-secondary)] mb-4">Nueva Ecija, Philippines</p>
+            <div class="flex items-center gap-2 font-mono text-xs text-[var(--accent-emerald)]">
+              <span class="status-indicator-dot"></span>
+              <span>Available for On-site, Hybrid & Remote</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>┬⌐ 2026 Joshua M. Madulid. Designed with intentional minimalism.</div>
+        <div class="flex items-center gap-6">
+          <a href="#hero" class="hover:text-[var(--text-primary)] transition-colors">Back to top Γåæ</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       INTERACTIVE MODALS
+       ====================================================================== -->
+
+  <!-- 1. ATOM AI Screens Gallery Modal -->
+  <div id="gallery-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="gallery-screen-title">
+    <div class="modal-container">
+      <div class="modal-header">
+        <div>
+          <h3 id="gallery-screen-title" class="modal-title">Screen Preview</h3>
+          <span id="gallery-screen-counter" class="font-mono text-xs text-[var(--text-muted)]">1 of 20</span>
+        </div>
+        <button class="modal-close" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="gallery-main-view">
+          <img id="gallery-main-image" src="" alt="Screen Preview" class="gallery-main-img">
+        </div>
+        <div class="gallery-controls">
+          <button id="gallery-prev-btn" class="action-link-btn">ΓåÉ Previous</button>
+          <span class="font-mono text-xs text-[var(--text-muted)]">Use ΓåÉ ΓåÆ keys to navigate</span>
+          <button id="gallery-next-btn" class="action-link-btn">Next ΓåÆ</button>
+        </div>
+        <div id="gallery-thumbnails" class="gallery-thumbnails"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Certificate Lightbox Modal -->
+  <div id="cert-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="cert-modal-title">
+    <div class="modal-container">
+      <div class="modal-header">
+        <div>
+          <span id="cert-modal-issuer" class="text-xs uppercase tracking-wider text-[var(--accent-blue)] font-semibold"></span>
+          <h3 id="cert-modal-title" class="modal-title mt-1">Certificate Title</h3>
+        </div>
+        <button class="modal-close" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-4 text-center">
+          <img id="cert-modal-img" src="" alt="Certificate" class="max-h-[50vh] mx-auto rounded-lg border border-[var(--border-color)] object-contain">
+        </div>
+        <div class="flex flex-wrap items-center justify-between gap-4 mb-4 pb-4 border-b border-[var(--border-color)]">
+          <span id="cert-modal-date" class="font-mono text-xs text-[var(--text-muted)]"></span>
+          <span id="cert-modal-id" class="font-mono text-xs text-[var(--text-dim)]"></span>
+          <a id="cert-modal-verify" href="#" target="_blank" rel="noopener noreferrer" class="action-link-btn text-xs">
+            <span>Verify Online Γåù</span>
+          </a>
+        </div>
+        <p id="cert-modal-desc" class="text-sm text-[var(--text-secondary)] mb-4 leading-relaxed"></p>
+        <div id="cert-modal-skills" class="flex flex-wrap gap-2"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. AI Assistant / Joshua Q&A Modal -->
+  <div id="ai-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="ai-modal-heading">
+    <div class="modal-container">
+      <div class="modal-header">
+        <div class="flex items-center gap-2">
+          <span class="status-indicator-dot"></span>
+          <h3 id="ai-modal-heading" class="modal-title">Ask About Joshua</h3>
+        </div>
+        <button class="modal-close" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="text-sm text-[var(--text-secondary)] mb-4">Click any question below to get instant verified information:</p>
+        <div class="ai-questions-list">
+                      <button class="ai-q-pill" data-answer="Joshua M. Madulid (@envydoes) is a graduating BS Information Technology student at Nueva Ecija University of Science and Technology (NEUST). He is a full-stack developer and UI/UX designer with proven experience delivering live production systems like the SumEste Portal (sum-este-portal.digital), specializing in PHP, MySQL, modern web tooling, Docker, and AI-assisted workflows.">
+              Who is Joshua?            </button>
+                      <button class="ai-q-pill" data-answer="Yes! Joshua is open to collaborations, freelance projects, and full-time opportunities in Full-Stack Web Development, Frontend/Backend, and UI/UX Design. He&#039;s available for remote, hybrid, or on-site arrangements. You can reach him at madulidjoshuam@gmail.com.">
+              Is Joshua available for work or collaboration?            </button>
+                      <button class="ai-q-pill" data-answer="Joshua specializes in Backend (PHP, Node.js, RESTful APIs, MySQL), Frontend (JavaScript, TypeScript, Tailwind CSS, HTML5/CSS3), DevOps/Cloud (Docker, Coolify, AWS, GitHub Actions), and modern AI engineering tools (Google Gemini, Claude Code, OpenAI).">
+              What technologies and stack does Joshua know?            </button>
+                      <button class="ai-q-pill" data-answer="Joshua&#039;s flagship project is the SumEste Portal (sum-este-portal.digital) ΓÇö a live resident tracking and community administration platform. He also engineered the Momms Inventory Management System, the TatakPH mobile app, Aurora tourism platform, and designed the comprehensive ATOM AI conversing app.">
+              What are Joshua&#039;s key projects?            </button>
+                      <button class="ai-q-pill" data-answer="Joshua holds 12 verified credentials, including the prestigious Google AI Professional Certificate (8 Courses) on Coursera, Cisco Networking Academy&#039;s JavaScript Essentials 2, TESDA/Microsoft Azure AI Fundamentals, and multiple enterprise architecture, API integration, and cybersecurity certifications from UpskillTechPH.">
+              What certifications does Joshua hold?            </button>
+                      <button class="ai-q-pill" data-answer="You can reach Joshua directly by email at madulidjoshuam@gmail.com, via GitHub at github.com/envydoes, or on LinkedIn at linkedin.com/in/joshuamadulid.">
+              How can I contact Joshua?            </button>
+                  </div>
+        <div class="ai-response-box">
+          <p id="ai-response-text" class="text-sm text-[var(--text-primary)]">Select a question above to see immediate answers about Joshua's background, projects, and availability.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Toast Notification -->
+  <div id="toast-notification" class="toast-msg">Email copied to clipboard!</div>
+
+  <!-- Main JavaScript Engine -->
+  <script src="js/main.js"></script>
+</body>
+</html>
